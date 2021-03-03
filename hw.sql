@@ -66,10 +66,10 @@ JOIN links l ON m.id = l.movie_id
 WHERE m.title LIKE '%comedy%' AND m.title LIKE '%(2005)%';
 
 -- question 4 --
-SELECT m.title, l.imdb_id 
+SELECT m.title 
 FROM movies m
-JOIN links l ON m.id = l.movie_id
-WHERE m.title LIKE '%comedy%' AND m.title LIKE '%(2005)%';
+JOIN ratings r ON m.id = r.movie_id
+WHERE r.rating = null;
 
 --Aggregation --
 -- question 1 --
