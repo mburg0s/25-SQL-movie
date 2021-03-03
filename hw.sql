@@ -50,7 +50,7 @@ WHERE (title LIKE '%(2001)%' AND  title LIKE '%super%')
 SELECT m.title, r.rating 
 FROM movies m
 JOIN ratings r ON m.id = r.movie_id
-WHERE title = 'Godfather, The (1972)'
+WHERE title = 'Godfather, The (1972)';
 
 -- question 2 --
 SELECT m.title, r.rating, r.timestamp
@@ -113,7 +113,8 @@ LIMIT 1;
 SELECT avg(rating) as HighestAvg , user_id, count(rating) as countR
 FROM ratings
 GROUP BY user_id
-ORDER BY countR Desc, HighestAvg Desc
+Having countR > 50
+ORDER BY HighestAvg Desc
 LIMIT 1;
 
 -- question 8 --
