@@ -66,7 +66,7 @@ JOIN links l ON m.id = l.movie_id
 WHERE m.title LIKE '%comedy%' AND m.title LIKE '%(2005)%';
 
 -- question 4 --
-SELECT m.title , r.rating
+SELECT m.title 
 FROM movies m
 LEFT JOIN ratings r ON m.id = r.movie_id
 WHERE r.rating is  null;
