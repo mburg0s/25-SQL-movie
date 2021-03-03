@@ -57,7 +57,7 @@ SELECT m.title, r.rating, r.timestamp
 FROM movies m
 JOIN ratings r ON m.id = r.movie_id
 WHERE title = 'Godfather, The (1972)'
-ORDER BY r.timestamp DESC;
+ORDER BY r.timestamp ASC;
 
 -- question 3 --
 SELECT m.title, l.imdb_id 
@@ -66,10 +66,10 @@ JOIN links l ON m.id = l.movie_id
 WHERE m.title LIKE '%comedy%' AND m.title LIKE '%(2005)%';
 
 -- question 4 --
-SELECT m.title 
+SELECT m.title , r.rating
 FROM movies m
-JOIN ratings r ON m.id = r.movie_id
-WHERE r.rating = null;
+LEFT JOIN ratings r ON m.id = r.movie_id
+WHERE r.rating is  null;
 
 --Aggregation --
 -- question 1 --
